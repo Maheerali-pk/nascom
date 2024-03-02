@@ -1,7 +1,9 @@
 import "./App.css";
+import "./index.css";
+import Home from "./pages/Home";
 
 function App() {
-   return <div className="text-red-600">Hello</div>;
+   return <Home></Home>;
 }
 
 export default App;
