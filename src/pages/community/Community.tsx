@@ -28,9 +28,9 @@ function Community() {
   return (
     <>
     <Navbar />
-    <div className='px-20 mt-8'>
-    <h1 className='text-2xl mb-4'>Recent Forum Activity</h1>
-    <ul className='flex flex-col gap-4'>
+    <div className='px-20 mt-12'>
+    <h1 className='text-3xl'>Recent Forum Activity</h1>
+    <ul className='flex flex-col gap-4 mt-6'>
       { messages?.length > 0
         && messages?.map((message, index) => (
           <MessageItem

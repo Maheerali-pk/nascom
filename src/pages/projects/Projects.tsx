@@ -1,3 +1,4 @@
+import Navbar from '../../base-compoents/Navbar';
 import ProjectItem from './components/ProjectItem'
 
 function Projects() {
@@ -37,6 +38,8 @@ function Projects() {
     },
   ]
   return (
+    <>
+    <Navbar />
     <div className='px-8'>
       <div className='flex gap-0 justify-between items-center'>
         <h1 className='text-2xl mb-4 mt-8 font-semibold'>Projects</h1>
@@ -131,6 +134,7 @@ function Projects() {
             )
           )}
     </div>
+    </>
   )
 }
 

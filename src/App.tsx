@@ -13,19 +13,17 @@ import EventDetails from "./pages/event-details/EventDetails";
 import MarketPlace from "./pages/market-place/MarketPlace";
 import Login from "./pages/login/login";
 import Signup from "./pages/signup/Signup";
-<<<<<<< HEAD
 import Calendar from "./pages/calendar/Calendar";
-=======
 import ResourceLibrary from "./pages/resourse-library/ResourceLibrary";
-import Blog from "./pages/blog/Blog";
->>>>>>> eb04dc1c1711c560bd3d86daeca16ddea2599173
+// import Blog from "./pages/blog/Blog";
+import UserProfile from "./pages/user-profile/UserProfile";
 
 function App() {
    return (
       <Routes>
          {/* <Home></Home> */}
          <Route path="/community" Component={Community} />
-         <Route path="/community/messsage-replies" Component={Replies} />
+         <Route path="/community/messsage-replies/:id" Component={Replies} />
          <Route path="/projects" Component={Projects} />
          <Route path="/project-details" Component={ProjectDetails} />
          <Route path="/add-project" Component={AddProject} />
@@ -35,12 +33,10 @@ function App() {
          <Route path="/marketplace" Component={MarketPlace}></Route>
          <Route path="/auth/login" Component={Login}></Route>
          <Route path="/auth/signup" Component={Signup}></Route>
-<<<<<<< HEAD
          <Route path="/calendar" Component={Calendar}></Route>
-=======
          <Route path="/resource-library" Component={ResourceLibrary}></Route>
-         <Route path="/blog/:id" Component={Blog}></Route>
->>>>>>> eb04dc1c1711c560bd3d86daeca16ddea2599173
+         <Route path="/user-details" Component={UserProfile}></Route>
+         {/* <Route path="/blog/:id" Component={Blog}></Route> */}
       </Routes>
    );
 }

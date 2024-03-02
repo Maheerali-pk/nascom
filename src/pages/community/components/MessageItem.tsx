@@ -26,16 +26,16 @@ function MessageItem({id, title, description, sender, liked, noOfLikes = 0, noOf
   const [isLiked, setIsLiked] = useState(liked);
 
   const titleClickHandler = () => {
-    navigate(`/community/messsage-replies?messageId=${id}`);
+    navigate(`/community/messsage-replies/${id}`);
   }
 
   const renderMessage = () => {
     return (
       <div className="flex flex-col gap-1">
-        <p className="font-semibold text-sm cursor-pointer" onClick={titleClickHandler}>
+        <p className="font-semibold text-lg cursor-pointer" onClick={titleClickHandler}>
           {title?.length > 30 ? `${title.slice(0, 30)}...` : title}
         </p>
-        <p className="font-normal text-xs">
+        <p className="font-normal text-lg">
           {description}
         </p>
         <div className="flex gap-2 items-center">
@@ -43,10 +43,10 @@ function MessageItem({id, title, description, sender, liked, noOfLikes = 0, noOf
           <div className="flex gap-2 items-center justify-between">
               {/* Likes */}
             <div className='flex gap-2 items-center'>
-              <button type='button' className={`text-xs text-primary p-0 ${isLiked ? 'text-primary-900' : 'text-secondary-900'} ring-0 outline-none`} title='like'
+              <button type='button' className={`text-xs text-primary p-0 ring-0 outline-none border-none`} title='like'
                 onClick={() => setIsLiked(!isLiked)}
               >
-                <svg fill="currentColor" height="20px" width="20px" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"
+                <svg fill="currentColor" height="22px" width="22px" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"
                     xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 486.926 486.926" xml:space="preserve">
                     <g>
                       <path d="M462.8,181.564c-12.3-10.5-27.7-16.2-43.3-16.2h-15.8h-56.9h-32.4v-75.9c0-31.9-9.3-54.9-27.7-68.4
@@ -61,14 +61,14 @@ function MessageItem({id, title, description, sender, liked, noOfLikes = 0, noOf
                     </g>
                 </svg>
               </button>
-              {noOfLikes > 0 && <span className="text-xs text-primary mt-1">{noOfLikes}</span>}
+              {noOfLikes > 0 && <span className="text-sm text-primary mt-1">{noOfLikes}</span>}
             </div>
             <div className='flex gap-2 items-center'>
-              <button type='button' className={`text-xs text-primary p-0 ${replyingIndex === messageIndex ? 'stroke-primary-900': 'stroke-gray-500'} hover:stroke-primary-900 outline-none ring-0`} 
+              <button type='button' className={`text-sm text-primary p-0 ${replyingIndex === messageIndex ? 'stroke-primary-900': 'stroke-gray-500'} hover:stroke-primary-900 outline-none ring-0 border-none`} 
                 title='reply'
                 onClick={() => setReplyingIndex(messageIndex)}
               >
-                <svg stroke="currentColor" fill="currentColor" width="20px" height="20px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns"
+                <svg stroke="currentColor" fill="currentColor" width="22px" height="22px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns"
                   className="hover:stroke-primary-900"
                 >            
                   <title>comment-3</title>
@@ -83,10 +83,10 @@ function MessageItem({id, title, description, sender, liked, noOfLikes = 0, noOf
                   </g>
               </svg>
               </button>
-              {noOfReplies > 0 && <span className="text-xs text-primary">{noOfReplies}</span>}
+              {noOfReplies > 0 && <span className="text-sm text-primary">{noOfReplies}</span>}
             </div>
           </div>
-          <span className="text-xs text-primary">2 hours ago</span>
+          <span className="text-sm text-primary">2 hours ago</span>
         </div>
       </div>
     )
@@ -94,7 +94,7 @@ function MessageItem({id, title, description, sender, liked, noOfLikes = 0, noOf
 
   const renderProfile = () => {
     return (
-      <div className="flex items-center justify-center gap-[0.09rem] h-10 w-10 bg-[rgba(217,217,217,0.10)] text-[0.9rem] text-primary rounded-full">
+      <div className="flex items-center justify-center gap-[0.09rem] h-12 w-12 bg-[rgba(217,217,217,0.10)] text-[0.9rem] text-primary rounded-full">
         ZC
       </div>
     );
