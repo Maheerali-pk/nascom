@@ -25,3 +25,11 @@ interface IResource {
    price: string;
    onSale: boolean;
 }
+
+interface IResourceLibraryItem {
+   id: string;
+   title: string;
+   category: FarmingType;
+   description: string;
+   images: string[];
+}

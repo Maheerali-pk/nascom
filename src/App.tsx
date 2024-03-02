@@ -13,7 +13,12 @@ import EventDetails from "./pages/event-details/EventDetails";
 import MarketPlace from "./pages/market-place/MarketPlace";
 import Login from "./pages/login/login";
 import Signup from "./pages/signup/Signup";
+<<<<<<< HEAD
 import Calendar from "./pages/calendar/Calendar";
+=======
+import ResourceLibrary from "./pages/resourse-library/ResourceLibrary";
+import Blog from "./pages/blog/Blog";
+>>>>>>> eb04dc1c1711c560bd3d86daeca16ddea2599173
 
 function App() {
    return (
@@ -30,7 +35,12 @@ function App() {
          <Route path="/marketplace" Component={MarketPlace}></Route>
          <Route path="/auth/login" Component={Login}></Route>
          <Route path="/auth/signup" Component={Signup}></Route>
+<<<<<<< HEAD
          <Route path="/calendar" Component={Calendar}></Route>
+=======
+         <Route path="/resource-library" Component={ResourceLibrary}></Route>
+         <Route path="/blog/:id" Component={Blog}></Route>
+>>>>>>> eb04dc1c1711c560bd3d86daeca16ddea2599173
       </Routes>
    );
 }
