@@ -2,7 +2,6 @@ import {
    GlobalContextProvider,
    useGlobalContext,
 } from "../contexts/GlobalContext";
-import OTPDialog from "../dialogs/OTPDialog";
 import DialogWrapper from "./DialogWrapper";
 import Loader from "./Loader";
 import * as React from "react";
