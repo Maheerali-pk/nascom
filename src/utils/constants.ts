@@ -3,36 +3,60 @@ export const routes = {
    signup: "/auth/signup",
 };
 
+interface IEvent {
+   id: string;
+   name: string;
+   date: string;
+   location: string;
+   image: string;
+   description: string;
+}
+
 export const dummyGardeningEvents: IEvent[] = [
    {
-      name: "Spring Planting Festival",
-      date: "2024-04-15",
-      location: "Community Garden Park, Springfield",
-      image: "https://cdn.pixabay.com/photo/2017/08/01/01/33/bean-2562249_1280.jpg", // Image of a garden planting
+      id: "EVT001",
+      name: "Urban Oasis Gardening Workshop",
+      date: "2024-03-15",
+      location: "GreenSpace Hub, Metro City",
+      image: "https://unsplash.com/photos/IVZn89VScag/download?ixid=MnwxMjA3fDB8MXxhbGx8fHx8fHx8fHwxNjY3NDA5OTIy&force=true&w=1920", // Image of a gardening workshop
+      description:
+         "Join us at the Urban Oasis Gardening Workshop to learn how to transform your rooftop or balcony into a lush, productive space. This full-day event will cover everything from selecting the right plant varieties for urban environments to maximizing your space with vertical gardening techniques. Experts in urban horticulture will guide you through hands-on sessions, ensuring you leave with the knowledge and confidence to start your own urban garden. Whether you're a seasoned gardener looking to adapt to city life or a complete novice eager to green your surroundings, this workshop is for you.",
    },
    {
-      name: "Urban Gardening Workshop",
-      date: "2024-05-22",
-      location: "Green Thumb Center, Downtown",
-      image: "https://cdn.pixabay.com/photo/2016/11/29/09/16/gardening-1868925_1280.jpg", // Image of an urban gardening workshop
+      id: "EVT002",
+      name: "Heritage Seed Swap Meet",
+      date: "2024-04-22",
+      location: "Historic Farmstead, Pleasantville",
+      image: "https://unsplash.com/photos/Y4qzW3AsvqI/download?ixid=MnwxMjA3fDB8MXxzZWFyY2h8M3x8c2VlZHN8ZW58MHx8fHwxNjY3NDEwMDI0&force=true&w=1920", // Image of seeds in hands
+      description:
+         "The annual Heritage Seed Swap Meet is back! This event is a treasure trove for gardeners looking to discover rare and heirloom seed varieties. Connect with fellow gardening enthusiasts and preserve biodiversity by swapping seeds with stories. The meet will also feature workshops on seed saving techniques, talks on the importance of genetic diversity in our food crops, and stalls from local organic producers. Don't miss this opportunity to expand your garden with unique plants that have been cherished through generations.",
    },
    {
-      name: "Harvest Celebration",
-      date: "2024-09-10",
-      location: "Local Farm Co-op, Riverside",
-      image: "https://cdn.pixabay.com/photo/2016/08/11/08/04/vegetables-1584999_1280.jpg", // Image of harvest vegetables
+      id: "EVT003",
+      name: "Community Garden Volunteer Day",
+      date: "2024-05-30",
+      location: "Sunshine Community Gardens, Lakeview",
+      image: "https://unsplash.com/photos/Ml4tr2WO7JE/download?ixid=MnwxMjA3fDB8MXxzZWFyY2h8MTh8fGdhcmRlbmluZ3xlbnwwfHx8fDE2NjczOTk5NTI&force=true&w=1920", // Image of community gardening
+      description:
+         "Lend a hand and be part of something bigger at the Community Garden Volunteer Day. Our community garden serves as a vital green space where people come together to grow food, flowers, and friendships. This event is perfect for anyone looking to get their hands dirty while making a positive impact. Activities will include planting new beds, repairing garden structures, and communal harvesting. It's a great way to learn about organic gardening practices, meet like-minded community members, and enjoy the fruits of collective labor. No previous gardening experience is required, just a willingness to contribute and learn.",
    },
    {
-      name: "Composting Basics Seminar",
-      date: "2024-06-05",
-      location: "Eco Learning Hub, Hilltown",
-      image: "https://cdn.pixabay.com/photo/2019/05/29/19/04/compost-4238270_1280.jpg", // Image of composting seminar
+      id: "EVT004",
+      name: "Sustainable Gardening Seminar",
+      date: "2024-06-18",
+      location: "Eco-Innovate Center, Old Town",
+      image: "https://unsplash.com/photos/hBpGJtGbf_8/download?ixid=MnwxMjA3fDB8MXxzZWFyY2h8MTJ8fHN1c3RhaW5hYmxlJTIwZ2FyZGVuaW5nfGVufDB8fHx8MTY2NzM5OTg0NQ&force=true&w=1920", // Image of sustainable gardening
+      description:
+         "Explore the principles of sustainable gardening at our in-depth seminar. This event is designed for gardeners of all levels who wish to deepen their understanding of eco-friendly practices. Topics will include composting, natural pest control, water conservation, and creating wildlife habitats within your garden. The seminar features presentations from leading experts in sustainable horticulture, interactive Q&A sessions, and a guided tour of the Eco-Innovate Center's demonstration gardens. Discover how to make your garden a model of sustainability and a haven for beneficial wildlife.",
    },
    {
-      name: "Garden Design for Sustainability",
-      date: "2024-07-20",
-      location: "Nature's Way Academy, Lakeview",
-      image: "https://cdn.pixabay.com/photo/2020/05/22/08/12/garden-5205789_1280.jpg", // Image of sustainable garden design
+      id: "EVT005",
+      name: "Garden-to-Table Cooking Class",
+      date: "2024-07-09",
+      location: "Fresh Feast Kitchen, Riverdale",
+      image: "https://unsplash.com/photos/IGfIGP5ONV0/download?ixid=MnwxMjA3fDB8MXxzZWFyY2h8NXx8Y29va2luZyUyMGNsYXNzfGVufDB8fHx8MTY2NzM5OTg3NQ&force=true&w=1920", // Image of cooking class
+      description:
+         "From garden to table, learn how to cook delicious, seasonal meals with produce you can grow at home. Our cooking class is perfect for anyone looking to combine their love of gardening with a passion for cooking. Led by a renowned local chef and a gardening expert, this class will teach you how to plan your garden with your kitchen in mind, harvest at the peak of freshness, and prepare mouthwatering dishes that highlight the flavors of your homegrown produce. This hands-on experience will not only enhance your culinary skills but also deepen your appreciation for the garden as a source of nourishment and inspiration.",
    },
 ];
 

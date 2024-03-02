@@ -5,10 +5,12 @@ interface IUser {
    isCommunityMemeber: boolean;
 }
 interface IEvent {
+   id: string;
    name: string;
    date: string;
    location: string;
    image: string;
+   description: string;
 }
 type FarmingType = "community-gardening" | "urban-farming";
 

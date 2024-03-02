@@ -1,5 +1,6 @@
 import React from "react";
 import { createCustomContext } from "../utils/CreateCustomContext";
+import { dummyGardeningEvents } from "../utils/constants";
 
 export interface IGlobalState {
    // selectionCenterPoint: "right" | "left";
@@ -8,6 +9,7 @@ export interface IGlobalState {
    salePriceInputValue: string;
    openedResourceId?: string;
    loading: boolean;
+   allEvents: IEvent[];
 }
 
 export const initialState: IGlobalState = {
@@ -20,6 +22,7 @@ export const initialState: IGlobalState = {
    loading: false,
    showSalePriceDialog: false,
    salePriceInputValue: "",
+   allEvents: dummyGardeningEvents,
 };
 
 const functions = {

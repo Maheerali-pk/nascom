@@ -13,6 +13,7 @@ interface EventsTable {
 
 const EventsTable: React.FC<EventsTable> = (props) => {
    const router = useNavigate();
+   const nav = useNavigate();
    if (props.events.length === 0)
       return (
          <div className="flex flex-col gap-8 items-center justify-center rounded-xl border border-gray-200 shadow-sm pt-12 pb-14">
@@ -68,6 +69,9 @@ const EventsTable: React.FC<EventsTable> = (props) => {
                   </div>
                   <div
                      className="btn btn-link btn-primary text-sm"
+                     onClick={() => {
+                        nav(`/event-details/${event.id}`);
+                     }}
                      // onClick={() =>
                      //    // router.push(routes.company.jobDetails.base(event._id))
                      // }
