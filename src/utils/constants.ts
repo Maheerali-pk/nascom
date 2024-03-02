@@ -112,3 +112,59 @@ export const dummyGardeningResources: IResource[] = [
       price: "$199.99",
    },
 ];
+export const resourceLibraryItems: IResourceLibraryItem[] = [
+   {
+      id: "0",
+      title: "The Beginner's Guide to Starting a Community Garden",
+      category: "community-gardening",
+      description:
+         "Discover the foundational steps to start your own community garden, from securing land to gathering your community and everything in between. This comprehensive guide offers insights into organizing your group, choosing the right crops, and designing your garden for maximum impact. Whether you're looking to grow fresh produce for your community, create a green space for education and relaxation, or foster local biodiversity, this guide has you covered.",
+      images: [
+         "https://unsplash.com/photos/ue2ZpYBHR8I/download?force=true&w=640", // Image of community meeting
+         "https://unsplash.com/photos/MoDcnVRN5JU/download?force=true&w=640", // Image of garden planning
+         "https://unsplash.com/photos/ILip77SbmOE/download?force=true&w=640", // Image of community garden
+      ],
+   },
+   {
+      id: "1",
+      title: "Urban Farming Innovations: Maximizing Small Spaces",
+      category: "urban-farming",
+      description:
+         "Explore the latest innovations in urban farming, including vertical gardening, hydroponics, and container gardening. This article delves into how city dwellers can transform their balconies, rooftops, and even windowsills into productive agricultural spaces. Learn about the technologies and techniques that are making it easier and more efficient to grow food in the heart of the city, reducing food miles and contributing to urban sustainability.",
+      images: [
+         "https://unsplash.com/photos/pElSkGRA2NU/download?force=true&w=640", // Image of vertical garden
+         "https://unsplash.com/photos/Qf7JtGtGQbk/download?force=true&w=640", // Image of hydroponic setup
+         "https://unsplash.com/photos/IGfIGP5ONV0/download?force=true&w=640", // Image of balcony garden
+      ],
+   },
+   {
+      id: "2",
+      title: "Permaculture Principles for the Home Gardener",
+      category: "community-gardening",
+      description:
+         "Permaculture is more than just a gardening technique; it's a philosophy for living in harmony with nature. This article introduces the core principles of permaculture and how they can be applied to home and community gardens. Discover how to design your garden ecosystem for sustainability, resilience, and abundance. Learn about the ethics of permaculture and how to implement its design principles in your gardening practice, creating spaces that nourish both people and the planet.",
+      images: [
+         "https://unsplash.com/photos/W6aMqXCVvCk/download?force=true&w=640", // Image of permaculture garden
+         "https://unsplash.com/photos/RWAIyGmgHTQ/download?force=true&w=640", // Image of sustainable gardening
+         "https://unsplash.com/photos/WeYamle9fDM/download?force=true&w=640", // Image of ecological design
+      ],
+   },
+   {
+      id: "3",
+      title: "Green Technologies in Urban Farming",
+      category: "urban-farming",
+      description:
+         "Urban farming is at the forefront of integrating green technologies to make agriculture more sustainable and efficient. This article reviews cutting-edge technologies, including IoT-based monitoring systems, automated watering and nutrient delivery systems, and energy-efficient LED grow lights. These innovations are helping urban farmers achieve higher yields, better crop quality, and lower environmental footprints. Whether you're a hobbyist or a professional urban farmer, understanding these technologies can elevate your urban farming game.",
+      images: [
+         "https://unsplash.com/photos/8pOTAtyd_Mc/download?force=true&w=640", // Image of IoT in agriculture
+         "https://unsplash.com/photos/IQVFVH0ajag/download?force=true&w=640", // Image of automated urban farm
+         "https://unsplash.com/photos/4PG6wLlVag4/download?force=true&w=640", // Image of LED grow lights
+      ],
+   },
+];
+export const host = "http://172.16.131.213:8000";
+
+export const apis = {
+   login: "login",
+   signup: "/signup",
+};

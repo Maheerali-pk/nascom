@@ -14,13 +14,11 @@ import {
    useGlobalContext,
 } from "../../contexts/GlobalContext";
 import * as React from "react";
-import { useEffect } from "react";
-import PageWrapper from "../../components/PageWrapper";
-import UploadFile from "../../components/UploadFile";
-import NotificationPopup from "../../components/NotificationPopup";
+import Swal from "sweetalert2";
 import { routes } from "../../utils/constants";
 import { useNavigate } from "react-router-dom";
 import { icons } from "../../utils/helpers";
+import { loginApi } from "../../apis/auth";
 
 const Login: React.FC = () => {
    const [state, dispatch] = useGlobalContext();
@@ -29,7 +27,15 @@ const Login: React.FC = () => {
    const [password, setPassword] = useState("");
    const [usernameError, setUsernameError] = useState("");
    const [passwordError, setPasswordError] = useState("");
-   const onSubmit = () => {};
+   const onSubmit = async () => {
+      dispatch({ setState: { loading: true } });
+      try {
+         await loginApi({ username, password });
+      } catch (err: any) {
+         Swal.fire({ text: err.toString(), icon: "error", color: "red" });
+      }
+      dispatch({ setState: { loading: false } });
+   };
    return (
       <>
          <AuthPageWrapper

@@ -2,27 +2,28 @@ import NavbarBase from "./NavbarBase";
 import { icons } from "../utils/helpers";
 import { routes } from "../utils/constants";
 import { useNavigate } from "react-router-dom";
+import { useGlobalContext } from "../contexts/GlobalContext";
 
 interface NavbarProps {}
 
 const navbarItems: INavbarItem[] = [
-   { text: "Home", url: "/", icon: icons.home },
-   { text: "Products", url: "/", icon: icons.home },
+   { text: "Dashboard", url: "/dashboard", icon: icons.home },
+   { text: "Marketplace", url: "/marketplace", icon: icons.home },
    {
-      text: "Home",
-      url: "/",
+      text: "Projects Showcase",
+      url: "/projects",
       icon: icons.home,
-      subItems: [
-         { text: "Overview", url: "/" },
-         { text: "Overview", url: "/" },
-         { text: "Overview", url: "/" },
-      ],
    },
-   { text: "Home", url: "/", icon: icons.home },
-   { text: "Home", url: "/", icon: icons.home },
+   {
+      text: "Community",
+      url: "/community",
+      icon: icons.home,
+   },
+   { text: "Add a project", url: "/add-project", icon: icons.home },
 ];
 const Navbar: React.FC<NavbarProps> = () => {
    const router = useNavigate();
+   const [state, dispatch] = useGlobalContext();
    const rightContent = (
       <div className="gap-8 hidden md:flex whitespace-nowrap items-center">
          <div
