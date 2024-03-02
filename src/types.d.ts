@@ -17,7 +17,7 @@ type FarmingType = "community-gardening" | "urban-farming";
 type EventStatus = "open" | "closed" | "attending" | "participating";
 
 interface IResource {
-   id: number;
+   id: string;
    name: string;
    description: string;
    image: string;

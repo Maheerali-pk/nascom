@@ -62,7 +62,7 @@ export const dummyGardeningEvents: IEvent[] = [
 
 export const dummyGardeningResources: IResource[] = [
    {
-      id: 0,
+      id: "0",
       onSale: true,
       name: "Community Garden Starter Kit",
       description:
@@ -72,7 +72,7 @@ export const dummyGardeningResources: IResource[] = [
       price: "$99.99",
    },
    {
-      id: 1,
+      id: "1",
       onSale: false,
       name: "Vertical Farming Setup Guide",
       description:
@@ -82,7 +82,7 @@ export const dummyGardeningResources: IResource[] = [
       price: "$29.99",
    },
    {
-      id: 2,
+      id: "2",
       onSale: true,
       name: "Organic Pest Control Solutions",
       description:
@@ -92,7 +92,7 @@ export const dummyGardeningResources: IResource[] = [
       price: "$14.99",
    },
    {
-      id: 3,
+      id: "3",
       onSale: true,
       name: "Space-Saving Container Gardens",
       description:
@@ -102,7 +102,7 @@ export const dummyGardeningResources: IResource[] = [
       price: "$39.99",
    },
    {
-      id: 4,
+      id: "4",
       onSale: false,
       name: "Water Conservation Systems for Gardens",
       description:
