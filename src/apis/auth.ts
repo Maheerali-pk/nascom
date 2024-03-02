@@ -10,6 +10,7 @@ interface RegisterRequest {
    password: string;
    interest: string;
    location: string;
+   experience: string;
 }
 
 export const loginApi = async (data: LoginRequest): Promise<IUser> => {
@@ -33,6 +34,15 @@ export const registerApi = async (data: RegisterRequest): Promise<IUser> => {
    const res = await fetch(`${host}/${apis.signup}/`, {
       method: "POST",
       body: formData,
+   });
+   const json = await res.json();
+   return json;
+};
+
+export const getUserDataApi = async () => {
+   const res = await fetch(`${host}/${apis.userData}/`, {
+      headers: { Authorization: `Token ${localStorage.getItem("token")}` },
+      method: "GET",
    });
    const json = await res.json();
    return json;

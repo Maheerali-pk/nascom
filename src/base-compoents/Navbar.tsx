@@ -19,12 +19,27 @@ const navbarItems: INavbarItem[] = [
       url: "/community",
       icon: icons.home,
    },
+   {
+      text: "Calendar",
+      url: "/calendar",
+      icon: icons.home,
+   },
    { text: "Add a project", url: "/add-project", icon: icons.home },
 ];
 const Navbar: React.FC<NavbarProps> = () => {
    const router = useNavigate();
    const [state, dispatch] = useGlobalContext();
-   const rightContent = (
+   const rightContent = state.user ? (
+      <div
+         className="font-semibold text-gray-600 cursor-pointer"
+         onClick={() => {
+            localStorage.removeItem("token");
+            router(routes.login);
+         }}
+      >
+         Logout
+      </div>
+   ) : (
       <div className="gap-8 hidden md:flex whitespace-nowrap items-center">
          <div
             className="font-semibold text-gray-600 cursor-pointer"

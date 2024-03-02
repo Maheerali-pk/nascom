@@ -25,16 +25,25 @@ const Login: React.FC = () => {
    const navigate = useNavigate();
    const [username, setUsername] = useState("");
    const [password, setPassword] = useState("");
-   const [usernameError, setUsernameError] = useState("");
-   const [passwordError, setPasswordError] = useState("");
    const onSubmit = async () => {
       dispatch({ setState: { loading: true } });
-      try {
-         await loginApi({ username, password });
-      } catch (err: any) {
-         Swal.fire({ text: err.toString(), icon: "error", color: "red" });
+
+      console.log("calling the login api");
+      const res = await loginApi({ username, password });
+
+      if ((res as any).error) {
+         dispatch({ setState: { loading: false } });
+         console.log("inside if");
+         return Swal.fire({
+            text: (res as any).error,
+            icon: "error",
+            color: "red",
+         });
       }
-      dispatch({ setState: { loading: false } });
+      console.log("outside if");
+      //@ts-ignore
+      localStorage.setItem("token", res.user_token.key);
+      navigate("/dashboard", { replace: true });
    };
    return (
       <>
@@ -44,8 +53,6 @@ const Login: React.FC = () => {
             heading="Log in to your account"
             subHeading="Welcome back! Please enter your details."
          >
-            <Loader></Loader>
-
             {/* <NotificationPopup
                acceptText="Got it, thanks"
                description="Your profile will be confidential and can be seen by recruiters only when you apply for their job."

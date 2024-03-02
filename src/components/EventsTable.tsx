@@ -5,6 +5,9 @@ import { icons } from "../utils/helpers";
 import JobStatusBadge from "./JobStatusBadge";
 import { routes } from "../utils/constants";
 import { useNavigate } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { useGlobalContext } from "../contexts/GlobalContext";
+import { getAllEvents } from "../apis/events";
 console.log("hello");
 
 interface EventsTable {
@@ -14,6 +17,22 @@ interface EventsTable {
 const EventsTable: React.FC<EventsTable> = (props) => {
    const router = useNavigate();
    const nav = useNavigate();
+   const [state, dispatch] = useGlobalContext();
+   useEffect(() => {
+      dispatch({ setState: { loading: true } });
+      getAllEvents({ details: false }).then((res) => {
+         dispatch({
+            setState: {
+               loading: false,
+               allEvents: [
+                  ...res.other_events,
+                  ...res.attending_events,
+                  ...res.participating_events,
+               ],
+            },
+         });
+      });
+   }, []);
    if (props.events.length === 0)
       return (
          <div className="flex flex-col gap-8 items-center justify-center rounded-xl border border-gray-200 shadow-sm pt-12 pb-14">

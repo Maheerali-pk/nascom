@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Navbar from "../../base-compoents/Navbar";
 import EventsTable from "../../components/EventsTable";
 import TabGroup from "../../components/TabGroup";
@@ -13,12 +13,28 @@ import DialogWrapper from "../../components/DialogWrapper";
 import Input from "../../components/Input";
 import Button from "../../components/Button";
 import { putResourceOnSale } from "../../apis/resources";
+import { getUserDataApi } from "../../apis/auth";
+import Loader from "../../components/Loader";
 
 interface UserDashboardProps {}
 
 const UserDashboard: React.FC<UserDashboardProps> = () => {
    const [tab, setTab] = useState(0);
    const [state, dispatch] = useGlobalContext();
+   useEffect(() => {
+      dispatch({ setState: { loading: false } });
+      getUserDataApi().then((res) => {
+         const resources = res.user_resources;
+         dispatch({
+            setState: {
+               user: res.user_data,
+               myResources: resources,
+               loading: false,
+            },
+         });
+      });
+   }, []);
+   if (!state.user) return <Loader></Loader>;
    return (
       <>
          <Navbar></Navbar>
@@ -71,9 +87,7 @@ const UserDashboard: React.FC<UserDashboardProps> = () => {
                   <EventsTable events={dummyGardeningEvents}></EventsTable>
                )}
                {tab === 0 && (
-                  <ResourceTable
-                     resources={dummyGardeningResources}
-                  ></ResourceTable>
+                  <ResourceTable resources={state.myResources}></ResourceTable>
                )}
             </div>
          </div>

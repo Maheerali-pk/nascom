@@ -166,5 +166,6 @@ export const host = "http://172.16.131.213:8000";
 
 export const apis = {
    login: "login",
-   signup: "/signup",
+   signup: "signup",
+   userData: "UserProfileView",
 };
