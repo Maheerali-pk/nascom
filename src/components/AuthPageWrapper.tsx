@@ -31,7 +31,7 @@ const AuthPageWrapper: React.FC<AuthPageWrapperProps> = ({
       <>
          <div className="flex justify-center relative w-full">
             <Loader></Loader>
-            {state.dialog && <state.dialog></state.dialog>}
+            {/* {state.dialog && <state.dialog></state.dialog>} */}
             <div className="flex flex-col md:w-90 w-full items-center h-full pt-12 md:pt-24 px-4 ">
                <div className="mb-6">{icon}</div>
                <div className="text-2xl md:text-3xl font-semibold text-center text-gray-900 mb-2 md:mb-3">
