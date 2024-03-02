@@ -21,6 +21,8 @@ import NotificationPopup from "../../components/NotificationPopup";
 import { routes } from "../../utils/constants";
 import { useNavigate } from "react-router-dom";
 import { icons } from "../../utils/helpers";
+import { registerApi } from "../../apis/auth";
+import Textarea from "../../components/Textarea";
 
 const Signup: React.FC = () => {
    const [state, dispatch] = useGlobalContext();
@@ -29,17 +31,28 @@ const Signup: React.FC = () => {
    const [password, setPassword] = useState("");
    const [email, setEmail] = useState("");
    const [experience, setExperience] = useState("");
-   const [usernameError, setUsernameError] = useState("");
-   const [passwordError, setPasswordError] = useState("");
-   const [emailError, setEmailError] = useState("");
-   const onSubmit = () => {};
+   const [interest, setInterest] = useState("");
+   const [location, setLocation] = useState("");
+   const onSubmit = async () => {
+      dispatch({ setState: { loading: true } });
+      await registerApi({
+         email,
+         interest,
+         location,
+         password,
+         username,
+         experience,
+      });
+      dispatch({ setState: { loading: false } });
+   };
+
    return (
       <>
          <AuthPageWrapper
             icon={<></>}
             // icon={icons..login}
-            heading="Log in to your account"
-            subHeading="Welcome back! Please enter your details."
+            heading="Create a new account"
+            subHeading="Become a memeber"
          >
             <Loader></Loader>
 
@@ -73,9 +86,23 @@ const Signup: React.FC = () => {
                <Input
                   onChange={setExperience}
                   value={experience}
-                  type="password"
+                  type="number"
                   label="What is your experience in gerdening"
                   placeholder="No of years"
+               ></Input>
+               <Textarea
+                  onChange={setInterest}
+                  value={interest}
+                  type="text"
+                  label="Interests"
+                  placeholder="Write about your interests"
+               ></Textarea>
+               <Input
+                  onChange={setLocation}
+                  value={location}
+                  type="text"
+                  label="Location"
+                  placeholder="Location"
                ></Input>
             </div>
             {/* <div className="flex  checkbox justify-between w-full my-6">

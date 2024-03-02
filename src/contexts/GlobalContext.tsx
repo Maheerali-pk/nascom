@@ -10,19 +10,22 @@ export interface IGlobalState {
    openedResourceId?: string;
    loading: boolean;
    allEvents: IEvent[];
+   myResources: IResource[];
 }
 
 export const initialState: IGlobalState = {
-   user: {
-      experience: 50,
-      isCommunityMemeber: true,
-      location: "Abbottabad",
-      username: "Maheer Saimoon Ali",
-   },
+   // user: {
+   //    experience: 50,
+   //    isCommunityMemeber: true,
+   //    location: "Abbottabad",
+   //    username: "Maheer Saimoon Ali",
+   //    email: "test"
+   // },
    loading: false,
    showSalePriceDialog: false,
    salePriceInputValue: "",
    allEvents: dummyGardeningEvents,
+   myResources: [],
 };
 
 const functions = {

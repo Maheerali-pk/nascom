@@ -15,8 +15,12 @@ import Login from "./pages/login/login";
 import Signup from "./pages/signup/Signup";
 import Calendar from "./pages/calendar/Calendar";
 import ResourceLibrary from "./pages/resourse-library/ResourceLibrary";
+<<<<<<< HEAD
 // import Blog from "./pages/blog/Blog";
 import UserProfile from "./pages/user-profile/UserProfile";
+=======
+import Blog from "./pages/blog/Blog";
+>>>>>>> ad9eec30ae63a2bf93fea8dfdafe93a4f6759984
 
 function App() {
    return (
@@ -29,14 +33,19 @@ function App() {
          <Route path="/add-project" Component={AddProject} />
          <Route path="*" element={<h1>Not Found</h1>} />
          <Route path="/dashboard" Component={UserDashboard}></Route>
+         <Route path="/" Component={UserDashboard}></Route>
          <Route path="/event-details/:id" Component={EventDetails}></Route>
          <Route path="/marketplace" Component={MarketPlace}></Route>
          <Route path="/auth/login" Component={Login}></Route>
          <Route path="/auth/signup" Component={Signup}></Route>
          <Route path="/calendar" Component={Calendar}></Route>
          <Route path="/resource-library" Component={ResourceLibrary}></Route>
+<<<<<<< HEAD
          <Route path="/user-details" Component={UserProfile}></Route>
          {/* <Route path="/blog/:id" Component={Blog}></Route> */}
+=======
+         <Route path="/blog/:id" Component={Blog}></Route>
+>>>>>>> ad9eec30ae63a2bf93fea8dfdafe93a4f6759984
       </Routes>
    );
 }

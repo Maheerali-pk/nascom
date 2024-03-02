@@ -1,7 +1,9 @@
 interface IUser {
+   email: string;
    username: string;
    experience: number;
    location: string;
+   interests: string;
    isCommunityMemeber: boolean;
 }
 interface IEvent {
