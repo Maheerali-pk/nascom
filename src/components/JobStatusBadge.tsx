@@ -1,28 +1,28 @@
 import classNames from "classnames";
-import { jobStatusToText } from "../utils/data";
+import { eventStatusToText } from "../utils/utils";
 
 interface JobStatusBadgeProps {
-   status: IJobStatus;
+   status: EventStatus;
 }
 
 const JobStatusBadge: React.FC<JobStatusBadgeProps> = ({ status }) => {
    return (
       <div
          className={classNames(
-            "flex justify-center items-center rounded-2xl py-0.5 w-28 font-medium text-xs",
+            "flex justify-center items-center  rounded-2xl py-0.5 w-28 font-medium text-xs",
             {
-               "text-secondary-700": status === "UNDER_REVIEW",
-               "bg-secondary-50": status === "UNDER_REVIEW",
-               "text-error-700": status === "HOLD",
-               "bg-error-50": status === "HOLD",
-               "text-success-700": status === "OPEN",
-               "bg-success-50": status === "OPEN",
-               "bg-gray-100": status === "CLOSED",
-               "text-gray-700": status === "CLOSED",
+               "text-secondary-700": status === "participating",
+               "bg-secondary-50": status === "participating",
+               "text-primary-700": status === "attending",
+               "bg-primary-50": status === "attending",
+               "text-success-700": status === "open",
+               "bg-success-50": status === "open",
+               "bg-gray-100": status === "closed",
+               "text-gray-700": status === "closed",
             }
          )}
       >
-         {jobStatusToText[status]}
+         {status}
       </div>
    );
 };

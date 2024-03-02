@@ -10,9 +10,17 @@
     "preview": "vite preview"
   },
   "dependencies": {
+<<<<<<< HEAD
     "framer-motion": "^11.0.8",
+=======
+    "@types/classnames": "^2.3.1",
+    "classnames": "^2.5.1",
+    "deep-clone": "^4.0.0",
+    "moment": "^2.30.1",
+>>>>>>> d309b6b8e77a5a66c515f6b8284568786eaefa44
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-loader-spinner": "^6.1.6",
     "react-router-dom": "^6.22.2"
   },
   "devDependencies": {

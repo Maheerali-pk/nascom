@@ -1,5 +1,5 @@
 import classNames from "classnames";
-import { useRouter } from "next/router";
+import { useNavigate } from "react-router-dom";
 
 interface ITab {
    text: string;
@@ -13,12 +13,12 @@ interface TabGroupProps {
 }
 
 const TabGroup: React.FC<TabGroupProps> = ({ selected, tabs, onTabChange }) => {
-   const router = useRouter();
+   const navigate = useNavigate();
    return (
       <div className="flex gap-6 border-b border-gray-200">
          {tabs.map((tab, i) => (
             <div
-               onClick={() => router.push(tab.url || "")}
+               onClick={() => onTabChange(i)}
                className={classNames(
                   "pr-1 cursor-pointer pb-3 pl-1 text-gray-500  border-primary-400",
                   {

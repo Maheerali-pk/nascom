@@ -1,10 +1,29 @@
 import React from "react";
 import { createCustomContext } from "../utils/CreateCustomContext";
+import { dummyGardeningEvents } from "../utils/constants";
 
 export interface IGlobalState {
    // selectionCenterPoint: "right" | "left";
+   user?: IUser;
+   showSalePriceDialog: boolean;
+   salePriceInputValue: string;
+   openedResourceId?: string;
+   loading: boolean;
+   allEvents: IEvent[];
 }
-export const initialState: IGlobalState = {};
+
+export const initialState: IGlobalState = {
+   user: {
+      experience: 50,
+      isCommunityMemeber: true,
+      location: "Abbottabad",
+      username: "Maheer Saimoon Ali",
+   },
+   loading: false,
+   showSalePriceDialog: false,
+   salePriceInputValue: "",
+   allEvents: dummyGardeningEvents,
+};
 
 const functions = {
    setState: (

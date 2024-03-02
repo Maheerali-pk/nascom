@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 :root {
-   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+   font-family: "Inter", sans-serif;
    line-height: 1.5;
    font-weight: 400;
 
@@ -27,8 +27,11 @@ a:hover {
 
 body {
    margin: 0;
+<<<<<<< HEAD
    /* display: flex;
    place-items: center; */
+=======
+>>>>>>> d309b6b8e77a5a66c515f6b8284568786eaefa44
    min-width: 320px;
    min-height: 100vh;
 }
@@ -264,9 +267,11 @@ text{
       color: var(--text-color);
    }
    .btn:focus {
-      background-color: var(--bg-color) !important;
+      /* background-color: var(--bg-color) !important;
       box-shadow: 0px 1px 2px var(--focus-shadow-color1), 0px 0px 0px 4px var(--focus-shadow-color2);
-      border-color: transparent;
+      border-color: transparent; */
+      border: none;
+      outline:none;
    }
    .btn:hover {
       background-color: var(--hover-bg);
@@ -566,9 +571,9 @@ text{
    font-style: normal;
    font-display: swap;
 }
-body {
+/* body {
    font-family: "Inter";
-}
+} */
 html,
 body {
    height: 100%;
