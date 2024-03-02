@@ -3,6 +3,39 @@ interface ForumListRequest {
     pageSize: number;
 }
 
+// export const loginApi = async (data: LoginRequest): Promise<IUser> => {
+//    const formData = new FormData();
+//    for (let key in data) {
+//       formData.append(key, data[key as keyof LoginRequest]);
+//    }
+//    const res = await fetch(${host}/${apis.login}/, {
+//       method: "POST",
+//       body: formData,
+//    });
+//    const json = await res.json();
+//    return json;
+// };
+
+interface JoinACommunityRequest {
+    community: string;
+}
+
+export const joinACommunity = async (data: JoinACommunityRequest) => {
+    const formData = new FormData();
+   
+    for (const key in data) {
+        formData.append(key, data[key as keyof JoinACommunityRequest]);
+    }
+   
+    const res = await fetch("127.0.0.1:8000/joinCommunity", {
+      method: "POST",
+      body: formData,
+   });
+   
+   const json = await res.json();
+   return json;
+}
+
 export const getForumList = async (params: ForumListRequest) => {
     // const { page, pageSize } = params;
     // const response = await axios.get(`/forum?page=${page}&pageSize=${pageSize}`);

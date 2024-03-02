@@ -4,7 +4,7 @@ import { icons } from "../utils/helpers";
 import NavbarItem from "./NavbarItem";
 import { useNavigate } from "react-router-dom";
 import { routes } from "../utils/constants";
-import mainLogo from "../assets/images/main-logo.webp";
+import mainLogo from "../assets/images/main-logo.jpg";
 
 interface NavbarProps {
    items: INavbarItem[];
@@ -23,7 +23,7 @@ const NavbarBase: React.FC<NavbarProps> = (props) => {
    return (
       <div className="h-18 md:h-20 min-h-[4.5rem] md:min-h-[5rem] bg-white flex items-center px-4 lg:px-28 border-b border-b-gray-100 justify-between w-full">
          <div className="gap-10 flex w-full items-center">
-            <img src="/images/logo.png"></img>
+            <img src={mainLogo} className="h-10 w-10 md:h-12 md:w-12" title="logo" />
             <div className="gap-1 hidden md:flex w-full">
                {props.items.map((item, i) => (
                   <NavbarItem
@@ -47,7 +47,8 @@ const NavbarBase: React.FC<NavbarProps> = (props) => {
                { "left-0": open, "-left-full": !open }
             )}
          >
-            <img src={mainLogo} className="mb-8 h-fit w-fit mx-4 "></img>
+            {/* <img src={mainLogo} className="mb-8 h-fit w-fit mx-4 "></img> */}
+            <img src={mainLogo} className="h-10 w-10 md:h-12 md:w-12" title="logo" />
             <div className="gap-1 flex flex-col w-full">
                {props.items.map((item, i) => (
                   <NavbarItem
@@ -55,7 +56,7 @@ const NavbarBase: React.FC<NavbarProps> = (props) => {
                      selected={i === props.selected}
                   ></NavbarItem>
                ))}
-            </div>
+            i</div>
          </div>
       </div>
    );

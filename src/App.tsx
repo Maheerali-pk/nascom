@@ -13,6 +13,7 @@ import EventDetails from "./pages/event-details/EventDetails";
 import MarketPlace from "./pages/market-place/MarketPlace";
 import Login from "./pages/login/login";
 import Signup from "./pages/signup/Signup";
+import Calendar from "./pages/calendar/Calendar";
 
 function App() {
    return (
@@ -29,6 +30,7 @@ function App() {
          <Route path="/marketplace" Component={MarketPlace}></Route>
          <Route path="/auth/login" Component={Login}></Route>
          <Route path="/auth/signup" Component={Signup}></Route>
+         <Route path="/calendar" Component={Calendar}></Route>
       </Routes>
    );
 }

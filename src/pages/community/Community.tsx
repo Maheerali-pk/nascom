@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import MessageItem from './components/MessageItem';
+import Navbar from '../../base-compoents/Navbar';
 
 function Community() {
   const [replyingIndex, setReplyingIndex] = useState<number | null>(null);
@@ -25,7 +26,9 @@ function Community() {
   ];
 
   return (
-    <div className='px-8'>
+    <>
+    <Navbar />
+    <div className='px-20 mt-8'>
     <h1 className='text-2xl mb-4'>Recent Forum Activity</h1>
     <ul className='flex flex-col gap-4'>
       { messages?.length > 0
@@ -46,6 +49,7 @@ function Community() {
         ))}
     </ul>
     </div>
+    </>
   )
 }
 
