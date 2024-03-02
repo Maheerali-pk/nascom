@@ -6,7 +6,10 @@ interface DialogWrapperProps {
    className?: string;
 }
 
-const DialogWrapper: React.FC<DialogWrapperProps> = ({ children, className = "" }) => {
+const DialogWrapper: React.FC<DialogWrapperProps> = ({
+   children,
+   className = "",
+}) => {
    const [state, dispatch] = useGlobalContext();
    const wrapperRef = React.useRef<HTMLDivElement>(null);
    return (
@@ -14,7 +17,7 @@ const DialogWrapper: React.FC<DialogWrapperProps> = ({ children, className = "" 
          ref={wrapperRef}
          onClick={(e) => {
             if (e.target === wrapperRef.current) {
-               dispatch({ setDialog: undefined });
+               dispatch({ setState: { showSalePriceDialog: false } });
             }
          }}
          className={`flex justify-center items-center fixed top-0 left-0 h-screen w-screen backdrop-blur z-40`}
